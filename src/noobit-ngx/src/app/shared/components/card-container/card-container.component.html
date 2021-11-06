@@ -1,0 +1,6 @@
+
+<div class="columns" *ngFor="let chunk of posts$ | async | chunk:3">
+    <div class="column is-one-third" *ngFor="let post of chunk">
+        <noobit-card [post]="post"></noobit-card>
+    </div>
+</div>

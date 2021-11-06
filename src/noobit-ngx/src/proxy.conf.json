@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://www.noobit.dev",
+    "secure": true
+  }
+}

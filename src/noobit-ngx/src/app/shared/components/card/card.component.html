@@ -1,0 +1,45 @@
+  <div class="card">
+    <div class="card-header">
+        <div class="card-header-title">
+            <a [href]="'https://www.noobit.dev/blog/' + post.topic.blog.seoName + '/' + post.topic.seoName + '/' + post.seoTitle">{{ post.title }}</a>
+        </div>
+    </div>
+    <div class="card-image">
+        <div class="image">
+            <a [href]="'https://www.noobit.dev/blog/' + post.topic.blog.seoName + '/' + post.topic.seoName + '/' + post.seoTitle">
+                <img 
+                     width="450"
+                     [src]="'https://www.noobit.dev/blog/' + post.topic.blog.seoName + '/' + post.topic.seoName + '/index.jpg?width=450'"
+                     [title]="post.title"
+                     [alt]="post.title" />
+            </a>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="content">
+
+            <div class="tags">
+                <span class="tag">
+                    <a [routerLink]="['/blog', post.topic.blog.seoName, post.topic.seoName]">
+                        {{ post.topic.name }}
+                    </a>
+                </span>
+            </div>
+
+            <div class="block">
+              {{ post.description }}
+            </div>
+
+        </div>
+    </div>
+     <footer class="card-footer">
+        <div class="card-footer-item">
+            <a [href]="'https://www.noobit.dev/blog/' + post.topic.blog.seoName + '/' + post.topic.seoName + '/' + post.seoTitle">
+                Learn more...
+            </a>
+        </div>
+        <div class="card-footer-item">
+            <span>Published on <time [dateTime]="(post.date | date:'yyyy-MM-ddTHH:mm:ss.SSS':'+0:00') + 'Z'">{{ post.date | date: 'dd.MM.yyyy' }}</time></span>
+        </div>
+    </footer>
+</div>

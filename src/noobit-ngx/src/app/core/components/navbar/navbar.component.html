@@ -1,0 +1,146 @@
+  <nav class="navbar is-dark" role="navigation" id="main-navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="~/">
+        <img src="https://www.noobit.dev/assets/icons/favicon-32x32.png" width="26" height="26">
+        <img src="https://www.noobit.dev/assets/images/noobit.png" height="60">
+      </a>
+  
+      <a role="button" class="navbar-burger" data-target="main-menu" aria-label="menu" aria-expanded="false" [ngClass]="{'is-active': isNavbarMenuActive$ | async }" (click)="toggleNavbarMenu()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div class="navbar-menu" id="main-menu" [ngClass]="{'is-active': isNavbarMenuActive$ | async }">
+      <div class="navbar-start">
+        <a [routerLink]="['/']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Home
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a [routerLink]="['/about']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+                 About
+            </a>
+            <div class="navbar-dropdown">
+              <a [routerLink]="['/about', 'curriculum-vitae']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+                  <span class="icon">
+                      <i class="fas fa-graduation-cap"></i>
+                  </span>
+                  <span>Curriculum Vitae</span>
+              </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" href="https://github.com/cmxl">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>GitHub</span>
+              </a>
+              <a class="navbar-item" href="https://stackoverflow.com/users/2277280/cmxl">
+                  <span class="icon">
+                      <i class="fab fa-stack-overflow"></i>
+                  </span>
+                  <span>StackOverflow</span>
+              </a>
+            </div>
+        </div>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Blog
+          </a>
+          <div class="navbar-dropdown">
+            <a [routerLink]="['/blog', 'coding']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              <span class="icon">
+                  <i class="fas fa-code"></i>
+              </span>
+              <span>Coding</span>
+            </a>
+            <a [routerLink]="['/blog', 'birds']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              <span class="icon">
+                  <i class="fas fa-feather-alt"></i>
+              </span>
+              <span>Birds</span>
+            </a>
+            <a [routerLink]="['/blog', 'travel']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              <span class="icon">
+                  <i class="fas fa-plane"></i>
+              </span>
+              <span>Travel</span>
+            </a>
+            <a [routerLink]="['/blog', 'thoughts']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              <span class="icon">
+                  <i class="fas fa-lightbulb"></i>
+              </span>
+              <span>Thoughts</span>
+            </a>
+          </div>
+        </div>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Tools
+          </a>
+          <div class="navbar-dropdown">
+            <a [routerLink]="['/tools']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              <span class="icon">
+                  <i class="fas fa-tools"></i>
+              </span>
+              <span>Guid Generator</span>
+            </a>
+          </div>
+        </div>
+  
+         <a [routerLink]="['/music']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Music
+        </a>
+  
+        <a [routerLink]="['/podcast']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Podcast
+        </a>
+  
+       
+        <a [routerLink]="['/astronomy']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Astronomy
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a [routerLink]="['/games']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+              Games
+          </a>
+          <div class="navbar-dropdown">
+            <a [routerLink]="['/games', 'minesweeper']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+                  Minesweeper
+              </a>
+              <a [routerLink]="['/games', 'solitaire']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+                  Solitaire
+              </a>
+              <a [routerLink]="['/games', 'sudoku']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+                  Sudoku
+              </a>
+          </div>
+        </div>
+
+      </div>
+  
+      <div class="navbar-end">
+        <a [routerLink]="['/health']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Status
+        </a>
+  
+        <a [routerLink]="['/disclaimer']" class="navbar-item" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+          Disclaimer
+        </a>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light" [routerLink]="['/login']">
+              <span class="icon">
+                 <i class="fas fa-sign-in-alt"></i>
+              </span>
+              <span>Login</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
